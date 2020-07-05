@@ -30,6 +30,58 @@
       </button>
     </div>
 
+    <script>
+      var length = prompt("How long do you want your PW be?");
+
+      // If length is not between 8 and 128
+      while (length < 8 || length > 128) {
+        alert("The length must be between 8 and 128");
+        length = prompt("How long do you want your PW be?");
+      }
+
+      var special = confirm("Do you want special characters?");
+      var numeric = confirm("Do you want numeric characters?");
+      var lowercase = confirm("Do you want lowercase characters?");
+      var uppercase = confirm("Do you want uppercase characters?");
+
+      // If user has chosen none
+      while (special !== true && numeric !== true && lowercase !== true && uppercase !== true) {
+        alert("You must choose one of the characteristics");
+        special = confirm("Do you want special characters?");
+        numeric = confirm("Do you want numeric characters?");
+        lowercase = confirm("Do you want lowercase characters?");
+        uppercase = confirm("Do you want uppercase characters?");
+      }
+
+      function generatePassword(long, special, numeric, lowercase, uppercase) {
+          var retVal = ""; 
+          var charset = "";
+          
+          // Append charset with response from user
+          if(special === true) {
+            charset += " !\"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~";
+          } 
+          if (numeric === true) {
+            charset += "0123456789";
+          } 
+          if (lowercase === true) {
+            charset += "abcdefghijklmnopqrstuvwxyz";
+          } 
+          if (uppercase === true) {
+            charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          }
+
+          // Generate random letters with length of length
+          for (var i = 0, n = charset.length; i < long; ++i) {
+              retVal += charset.charAt(Math.floor(Math.random() * n));
+          }
+          return retVal;
+      }
+
+      alert(generatePassword(length, special, numeric, lowercase, uppercase));
+
+    </script>
+
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
