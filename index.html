@@ -10,25 +10,6 @@
   </head>
 
   <body style="background-color: lightgrey;">
-    <header>
-      <h1>Password Generator</h1>
-    </header>
-
-    <div class="container">
-      <h2>Generate a Password</h2>
-      <hr class="solid">
-      <textarea
-        rows="8"
-        readonly
-        id="password"
-        placeholder="Your Secure Password"
-        aria-label="Generated Password"
-      ></textarea>
-      <button class="btn btn-danger btn-lg col-md-4" id="generate">Generate Password</button>
-      <button class="btn btn-lg col-md-4" id="copy">
-        Copy to Clipboard
-      </button>
-    </div>
 
     <script>
       var length = prompt("How long do you want your PW be?");
@@ -78,9 +59,38 @@
           return retVal;
       }
 
-      alert(generatePassword(length, special, numeric, lowercase, uppercase));
+      // Function to get Password with user's input
+      function getPassword() {
+        document.getElementById("password").value = generatePassword(length, special, numeric, lowercase, uppercase);
+      }
 
+      // Function to copy what's in the textarea
+      function copy() {
+        let textarea = document.getElementById("password");
+        textarea.select();
+        document.execCommand("copy");
+      }   
     </script>
+
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+
+    <div class="container">
+      <h2>Generate a Password</h2>
+      <hr class="solid">
+      <textarea
+        rows="8"
+        readonly
+        id="password"
+        placeholder="Your Secure Password"
+        aria-label="Generated Password"
+      ></textarea>
+      <button class="btn btn-danger btn-lg col-md-4" id="generate" onclick="getPassword()">Generate Password</button>
+      <button class="btn btn-lg col-md-4" id="copy" onclick="copy()">
+        Copy to Clipboard
+      </button>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
