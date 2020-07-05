@@ -1,5 +1,7 @@
 # Password Generator
 
+![alt text](http://url/to/img.png)
+
 ## Description
 
 An application that generates a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code.
@@ -31,9 +33,11 @@ I WANT to randomly generate a password that meets certain criteria
 
 SO THAT I can create a strong password that provides greater security
 
+
 ## Business Context
 
 For companies that handle large amounts of sensitive data, weak passwords can pose a real security threat. An application that can generate strong passwords quickly and effortlessly saves employees time and ensures secure access to data.
+
 
 ## Acceptance Criteria
 
@@ -43,7 +47,6 @@ WHEN prompted for password criteria
 
 THEN a password is generated
 
-- - -
 
 ## Source URL
 
