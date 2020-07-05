@@ -1,6 +1,6 @@
 # Password Generator
 
-![alt text](http://screenshot.png)
+![alt Screenshot of the Project](screenshot.png)
 
 ## Description
 
