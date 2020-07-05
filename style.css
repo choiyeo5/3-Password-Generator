@@ -1,0 +1,35 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    overflow: auto;
+    padding: 20px;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+#password {
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: center;
+    border: dashed 2px lightgray;
+}
+
+#copy {
+    float: right;
+    background-color: lightgray;
+    color: white;
+}
