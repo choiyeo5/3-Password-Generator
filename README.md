@@ -1,6 +1,6 @@
 # Password Generator
 
-![alt text](http://url/to/img.png)
+![alt text](http://screenshot.png)
 
 ## Description
 
